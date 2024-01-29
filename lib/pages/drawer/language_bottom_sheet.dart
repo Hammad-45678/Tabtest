@@ -16,6 +16,10 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   String selectedLanguage = "";
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 22 : 16;
+    double langfontSize = screenWidth > 600 ? 19 : 15;
+    double langnamefontSize = screenWidth > 600 ? 15 : 10;
     return Container(
         height: 500,
         decoration: const BoxDecoration(
@@ -41,9 +45,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
                 context,
                 'app_language',
               ),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 16,
+                fontSize: fontSize,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.48,
               ),
@@ -72,9 +76,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
                         context,
                         'done',
                       ),
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: fontSize,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -150,13 +154,13 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
           //     ),
           //   ),
           // ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 10, top: 18),
             child: Text(
               'All Language',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: fontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
               ),
@@ -205,9 +209,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
                             children: [
                               Text(
                                 localeText(context, lang.name),
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 12,
+                                  fontSize: langfontSize,
                                   fontWeight: FontWeight.w400,
                                   height: 0,
                                   letterSpacing: 0.60,
@@ -215,9 +219,9 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
                               ),
                               Text(
                                 lang.name,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: langnamefontSize,
                                   fontWeight: FontWeight.w400,
                                   letterSpacing: 0.30,
                                 ),

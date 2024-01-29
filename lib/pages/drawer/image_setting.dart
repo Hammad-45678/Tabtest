@@ -32,6 +32,9 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 22 : 16;
+    double imagefontSize = screenWidth > 600 ? 16 : 12;
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -59,9 +62,9 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
                 context,
                 'image_settings',
               ),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 16,
+                fontSize: fontSize,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.48,
               ),
@@ -76,9 +79,9 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
                 const EdgeInsets.only(top: 20, left: 10, bottom: 21, right: 10),
             child: Text(
               localeText(context, 'preferred_format_to_download_images'),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: imagefontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
               ),
@@ -87,11 +90,11 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'JPEG',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 12,
+                  fontSize: imagefontSize,
                   fontWeight: FontWeight.w400,
                   height: 0,
                   letterSpacing: 0.60,
@@ -123,11 +126,11 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'PNG',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 12,
+                  fontSize: imagefontSize,
                   fontWeight: FontWeight.w400,
                   height: 0,
                   letterSpacing: 0.60,
@@ -159,11 +162,11 @@ class _RadioSelectionBottomSheetState extends State<RadioSelectionBottomSheet> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: ListTile(
-              title: const Text(
+              title: Text(
                 'WEBP',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 12,
+                  fontSize: imagefontSize,
                   fontWeight: FontWeight.w400,
                   letterSpacing: 0.60,
                 ),
@@ -241,6 +244,8 @@ class CancelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 16 : 12;
     return Container(
       height: 40,
       padding: EdgeInsets.symmetric(horizontal: 60),
@@ -257,9 +262,9 @@ class CancelButton extends StatelessWidget {
             'cancel',
           ),
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.white,
-            fontSize: 10,
+            fontSize: fontSize,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -275,6 +280,9 @@ class DoneButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 16 : 12;
+
     return Container(
       height: 40,
       padding: EdgeInsets.symmetric(horizontal: 60),
@@ -292,9 +300,9 @@ class DoneButton extends StatelessWidget {
           context,
           'done',
         ),
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.white,
-          fontSize: 12,
+          fontSize: fontSize,
           fontWeight: FontWeight.w700,
         ),
       )),

@@ -25,6 +25,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 20 : 16;
+    double selectfontSize = screenWidth > 600 ? 20 : 16;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,9 +49,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
               context,
               'app_theme',
             ),
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: fontSize,
               fontWeight: FontWeight.w600,
               height: 0,
               letterSpacing: 0.48,
@@ -64,9 +67,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
               const EdgeInsets.only(top: 20, left: 10, bottom: 21, right: 10),
           child: Text(
             localeText(context, 'select_theme_of_your_app_which_you_prefer'),
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: selectfontSize,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -79,9 +82,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
                 context,
                 'system_default',
               ),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: selectfontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
                 letterSpacing: 0.60,
@@ -117,9 +120,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
                 context,
                 'light',
               ),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: selectfontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
                 letterSpacing: 0.60,
@@ -152,9 +155,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
           child: ListTile(
             title: Text(
               localeText(context, 'dark'),
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: selectfontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
                 letterSpacing: 0.60,
@@ -188,13 +191,13 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
                     'Cancel',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: selectfontSize,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -222,9 +225,9 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
                       context,
                       'done',
                     ),
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12,
+                      fontSize: selectfontSize,
                       fontWeight: FontWeight.w700,
                     ),
                   )),

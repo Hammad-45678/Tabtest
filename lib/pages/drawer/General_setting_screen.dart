@@ -19,6 +19,8 @@ class GeneralSettingContainer extends StatefulWidget {
 class _GeneralSettingContainerState extends State<GeneralSettingContainer> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double fontSize = screenWidth > 600 ? 20 : 12;
     return Column(
       children: [
         GestureDetector(
@@ -26,13 +28,13 @@ class _GeneralSettingContainerState extends State<GeneralSettingContainer> {
           child: ListTile(
             leading: Image.asset(
               widget.leadingicon,
-              height: 20,
+              height: MediaQuery.of(context).size.width > 600 ? 30 : 20,
             ),
             title: Text(
               widget.text,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: fontSize,
                 fontWeight: FontWeight.w400,
                 height: 0,
                 letterSpacing: 0.60,
