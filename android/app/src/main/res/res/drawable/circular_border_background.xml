@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/circular_border_background.xml -->
+<!-- res/drawable/circular_border_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#EDEDED" /> <!-- Set the background color -->
+    <stroke android:color="#FFFFFF" android:width="2dp" /> <!-- Set the border color and width -->
+</shape>
+
+

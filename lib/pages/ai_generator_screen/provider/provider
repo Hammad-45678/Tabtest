@@ -1,0 +1,19 @@
+// image_provider.dart
+
+import 'package:flutter/material.dart';
+
+class Text2ImageProvider with ChangeNotifier {
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+double _currentSliderValue = 20;
+  double get currentSliderValue => _currentSliderValue;
+  void setLoadingAnimation(bool value) {
+    _isLoading = value;
+    notifyListeners();
+  }
+
+  void updateSliderValue(double value) {
+    _currentSliderValue = value;
+    notifyListeners();
+  }
+}
